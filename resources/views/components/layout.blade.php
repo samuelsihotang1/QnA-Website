@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/css/components.css">
   <script src="/js/components.js"></script>
   <script type="module" src="/js/iframe-alpine-964dceff.js"></script>
+  @livewireStyles
 </head>
 
 <body class="bg-white h-full">
@@ -18,7 +19,7 @@
     {{ $slot }}
 
   </div>
-
+  @livewireScripts
 </body>
 
 </html>
