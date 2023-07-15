@@ -2,11 +2,8 @@
   <x-slot name="title">
     Login
   </x-slot>
-  <x-slot name="navbar">
-    false
-  </x-slot>
   <main>
-    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl py-2 sm:px-6 lg:px-8">
       <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
           <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"

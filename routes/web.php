@@ -23,7 +23,7 @@ Route::get('/', function () {
   return view('index', [
     'posts' => Post::all()
   ]);
-});
+})->middleware('auth');
 
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 

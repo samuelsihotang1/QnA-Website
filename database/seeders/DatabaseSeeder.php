@@ -18,33 +18,13 @@ class DatabaseSeeder extends Seeder
    */
   public function run(): void
   {
-    $username = 'samuel';
-    User::factory()->create(
-      [
-        'username' => $username,
-        'user_type' => 'admin',
-        'password' => bcrypt($username)
-      ]
-    );
-
     for ($i = 0; $i < 10; $i++) {
       $user = User::factory()->create();
-      $category = Category::factory()->create();
-
-      $post = Post::factory()->create([
-        'user_id' => $user->id,
-        'category_id' => $category->id
-      ]);
-
-      $comment = Comment::factory()->create([
-        'user_id' => $user->id,
-        'post_id' => $post->id
-      ]);
-
-      Reply::factory()->create([
-        'user_id' => $user->id,
-        'comment_id' => $comment->id
-      ]);
+      for ($j = 0; $j < 3; $j++) {
+        Post::factory()->create([
+          'user_id' => $user->id,
+        ]);
+      }
     }
   }
 }
