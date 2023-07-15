@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 
+use App\Models\User;
+use App\Models\Post;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +20,9 @@ use App\Http\Controllers\SessionsController;
 */
 
 Route::get('/', function () {
-  return view('index');
+  return view('index', [
+    'posts' => Post::all()
+  ]);
 });
 
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');

@@ -29,6 +29,7 @@ class UserFactory extends Factory
       'email' => fake()->unique()->safeEmail(),
       'email_verified_at' => now(),
       'password' => bcrypt($username),
+      'profile_picture' => 'storage/images/default.jpg',
       'remember_token' => Str::random(10),
     ];
   }
