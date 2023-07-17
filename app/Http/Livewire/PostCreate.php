@@ -8,7 +8,7 @@ use App\Models\User;
 
 class PostCreate extends Component
 {
-  public $title;
+  public $question;
 
   public function render()
   {
@@ -18,15 +18,15 @@ class PostCreate extends Component
   public function store()
   {
     $this->validate([
-      'title' => 'required|string|min:10',
+      'question' => 'required|string|min:10',
     ]);
 
     Post::factory()->create([
-      'title' => $this->title,
+      'title' => $this->question,
       'user_id' => auth()->user()->id,
     ]);
 
-    $this->title = NULL;
+    $this->question = NULL;
 
     $this->emit('postStore');
   }
